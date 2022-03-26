@@ -142,13 +142,16 @@
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Observable.cpp" />
     <ClCompile Include="Tetris.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Figure.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="IObserver.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Observable.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
