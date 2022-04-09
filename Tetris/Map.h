@@ -11,48 +11,14 @@ private:
 	static constexpr bool DEFAULT_CELL_INITIALIZER = false;
 
 public:
-	Map(int w, int h)
-	{
-		myMap.resize(h);
-		for (auto&& aRow : myMap)
-		{
-			aRow.resize(w);
-		}
-		clearMap();
-	}
+	Map(int w, int h);
 
 private:
-	void clearRow(const typename Matrix::reference theVector)
-	{
-		for (auto&& aCell : theVector)
-		{
-			aCell = DEFAULT_CELL_INITIALIZER;
-		}
-	}
+	void clearRow(const typename Matrix::reference theVector);
 
-	void clearMap()
-	{
-		for (auto&& aRow : myMap)
-		{
-			clearRow(aRow);
-		}
-	}
+	void clearMap();
 
-	void eraseLastRow() // clears last row and moves other rows below
-	{
-		for (auto aReverseIter = myMap.rbegin(); aReverseIter != myMap.rend(); ++aReverseIter)
-		{
-			auto aNextIter = std::next(aReverseIter);
-			if (aNextIter == myMap.rend())
-			{
-				clearRow(*aReverseIter);
-			}
-			else
-			{
-				*aReverseIter = std::move(*aNextIter);
-			}
-		}
-	}
+	void eraseLastRow(); // clears last row and moves other rows below
 
 private:
 	Matrix myMap;

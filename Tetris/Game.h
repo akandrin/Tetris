@@ -4,9 +4,7 @@
 class Game
 {
 public:
-	Game() : myTimer(1000)
-	{
-	}
+	Game();
 
 private:
 	Timer myTimer;

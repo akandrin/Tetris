@@ -9,28 +9,11 @@ class Timer : public Observable
 {
 public:
 
-	Timer(int theMSecInterval) : msec(theMSecInterval) {}
+	Timer(int theMSecInterval);
 
-	void start()
-	{
-		if (msec <= 0)
-		{
-			throw std::exception("Incorrect msec");
-		}
+	void start();
 
-		std::chrono::milliseconds aTime(msec);
-
-		while (true)
-		{
-			std::this_thread::sleep_for(aTime);
-			notifyUpdate();
-		}
-	}
-
-	void SetInterval(int msec)
-	{
-		this->msec = msec;
-	}
+	void SetInterval(int msec);
 
 private:
 	int msec = -1;
